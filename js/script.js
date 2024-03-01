@@ -7,6 +7,7 @@ const btnRestart = document.getElementById('btn-restart');
 const difficultyArray = [49, 81, 100];
 const bombArray = [];
 const bombNumber = 16;
+let score = 0;
 let maxSquares;
 let win;
 
@@ -48,7 +49,6 @@ function createBombs() {
       bombArray.push(bombID);
     }
   } while (bombArray.length < bombNumber);
-  console.log(bombArray);
 }
 
 // Funzione per creare la griglia
@@ -68,8 +68,9 @@ function createSquare(indexN) {
   cell._cellID = indexN;
 
   cell.addEventListener('click', function() {
+    checkLose(this);
     this.classList.add('empty');
-    checkLose(cell);
+    score++
     checkWin();
   })
 
@@ -91,29 +92,57 @@ function checkLose(cell) {
   if (bombArray.includes(cell._cellID)) {
     cell.classList.add('bomb');
     win = false;
+    showBombs()
     printResult(win);
+  }
+}
+
+// Funzione per mostrare tutte le bombe
+function showBombs() {
+  const allSquares = document.querySelectorAll('.square')
+  let c = 0;
+
+  for (let n = 0; n < bombArray.length; n++) {
+    for (let i = 0; i < allSquares.length; i++) {
+      if (allSquares[i]._cellID === bombArray[c]) {
+        allSquares[i].classList.add('bomb');
+        allSquares[i].innerHTML = '<i class="fa-solid fa-bomb"></i>';
+      }
+    }
+    c++;
   }
 }
 
 // Funzione per stampare il risultato
 function printResult(win) {
+  const message = document.createElement('div');
+  message.className = 'game-end';
+
   if (win) {
-  const message = document.createElement('div');
-  message.className = 'game-end';
   message.classList.add('win');
-  message.innerHTML = 'Hai Vinto!';
-  grid.append(message);
+  message.innerHTML =
+  message.innerHTML = 
+  `
+  Hai Vinto!<br>
+  Il tuo punteggio è di:<br>
+  ${score}/${maxSquares}
+  `;
   } else {
-  const message = document.createElement('div');
-  message.className = 'game-end';
   message.classList.add('lose');
-  message.innerHTML = 'Hai Perso!';
-  grid.append(message);
+  message.innerHTML = 
+  `
+  Hai Perso!<br>
+  Il tuo punteggio è di:<br>
+  ${score}/${maxSquares}
+  `;
   }
+
+  grid.append(message);
 }
 
 // Funzione di reset della griglia
 function reset() {
   grid.innerHTML = '';
   bombArray.splice(0);
+  score = 0;
 }
