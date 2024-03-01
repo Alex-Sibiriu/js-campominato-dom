@@ -54,8 +54,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
+/* DIFFICULTY */
 label {
   text-transform: uppercase;
   font-size: 2rem;
@@ -82,6 +84,7 @@ label {
   border: 5px outset brown;
 }
 
+/* SQUARES */
 .square {
   aspect-ratio: 1;
   display: flex;
@@ -118,6 +121,7 @@ label {
   width: calc(100% / 10);
 }
 
+/* GAME END */
 .game-end {
   position: absolute;
   width: 100%;
@@ -144,4 +148,22 @@ label {
 .game-end.lose {
   color: crimson;
   background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* SCORE PANEL */
+#score-panel {
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 20px;
+  background-color: brown;
+}
+
+#score-panel h2 {
+  
+}
+
+#score-panel {
+
 }

@@ -18,6 +18,7 @@ grid.append(btnStart);
 **************/
 btnStart.addEventListener('click', startGame);
 btnRestart.addEventListener('click', startGame);
+console.log(bombArray)
 
 /**************
   FUNCTIONS
@@ -68,9 +69,12 @@ function createSquare(indexN) {
   cell._cellID = indexN;
 
   cell.addEventListener('click', function() {
-    checkLose(this);
+    if (!(this.classList.contains('empty'))) {
+      score++;
+    }
     this.classList.add('empty');
-    score++
+    checkLose(this);
+    console.log(score)
     checkWin();
   })
 
@@ -79,9 +83,7 @@ function createSquare(indexN) {
 
 // Funzione per controllare se il giocatore ha vinto
 function checkWin() {
-  const allClickedSquares = document.querySelectorAll('.empty');
-
-  if (allClickedSquares.length === (maxSquares - bombNumber)) {
+  if (score === (maxSquares - bombNumber)) {
     win = true;
     printResult(win);
   } 
@@ -92,6 +94,7 @@ function checkLose(cell) {
   if (bombArray.includes(cell._cellID)) {
     cell.classList.add('bomb');
     win = false;
+    score--;
     showBombs()
     printResult(win);
   }
@@ -100,16 +103,12 @@ function checkLose(cell) {
 // Funzione per mostrare tutte le bombe
 function showBombs() {
   const allSquares = document.querySelectorAll('.square')
-  let c = 0;
 
-  for (let n = 0; n < bombArray.length; n++) {
-    for (let i = 0; i < allSquares.length; i++) {
-      if (allSquares[i]._cellID === bombArray[c]) {
-        allSquares[i].classList.add('bomb');
-        allSquares[i].innerHTML = '<i class="fa-solid fa-bomb"></i>';
-      }
+  for (let i = 0; i < allSquares.length; i++) {
+    if (bombArray.includes(allSquares[i]._cellID)) {
+      allSquares[i].classList.add('bomb');
+      allSquares[i].innerHTML = '<i class="fa-solid fa-bomb"></i>';
     }
-    c++;
   }
 }
 
@@ -125,7 +124,7 @@ function printResult(win) {
   `
   Hai Vinto!<br>
   Il tuo punteggio è di:<br>
-  ${score}/${maxSquares}
+  ${score}/${maxSquares - bombNumber}
   `;
   } else {
   message.classList.add('lose');
@@ -133,7 +132,7 @@ function printResult(win) {
   `
   Hai Perso!<br>
   Il tuo punteggio è di:<br>
-  ${score}/${maxSquares}
+  ${score}/${maxSquares - bombNumber}
   `;
   }
 
