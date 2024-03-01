@@ -92,9 +92,14 @@ label {
   cursor: pointer;
 }
 
-.clicked {
+.empty {
   background-color: wheat;
   border: 5px inset wheat;
+}
+
+.bomb {
+  background-color: red;
+  border: 5px inset red;
 }
 
 .grid49 .square {
