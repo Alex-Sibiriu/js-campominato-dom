@@ -87,7 +87,6 @@ label {
   box-sizing: content-box;
   background-color: coral;
   border: 10px outset brown;
-  margin-left: 300px;
 }
 
 /* SQUARES */
@@ -108,12 +107,24 @@ label {
   background-color: wheat;
   border: 5px inset wheat;
   pointer-events: none;
+  user-select: none;
+}
+
+.flag {
+  background-image: url('../img/skull-crossbones-solid.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
+  background-color: #86ba90;
+  border: 5px outset #86ba90;
+  box-shadow: 0 0 2px inset green;
 }
 
 .bomb {
   background-color: brown;
   border: 5px inset brown;
   font-size: 3rem;
+  color: black !important;
 }
 
 .grid49 .square {
@@ -128,6 +139,30 @@ label {
   width: calc(100% / 10);
 }
 
+.bombs0 {
+  color: transparent;
+}
+
+.bombs1 {
+  color: rgb(114, 1, 220);
+}
+
+.bombs2 {
+  color: crimson;
+}
+
+.bombs3 {
+  color: forestgreen;
+}
+
+.bombs4 {
+  color: cornflowerblue;
+}
+
+.bombs5 {
+  color: fuchsia;
+}
+
 /* GAME END */
 .game-end {
   position: absolute;
@@ -140,21 +175,56 @@ label {
   line-height: 200px;
   font-size: 3rem;
   letter-spacing: 2px;
-  font-weight: bold;
-  text-shadow: 2px 5px black,
-              -2px -2px black,
-               2px -2px black,
-              -2px 2px black;     
+  font-weight: bold;   
 }
 
 .game-end.win {
   background-color: rgba(22, 255, 76, 0.2);
   color: yellowgreen;
+  text-shadow: 2px 5px black,
+              -2px -2px black,
+               2px -2px black,
+              -2px 2px black;  
 }
 
 .game-end.lose {
   color: crimson;
   background-color: rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 5px white,
+              -2px -2px white,
+               2px -2px white,
+              -2px 2px white;   
+}
+
+/* FLAG PANEL */
+#flag-panel {
+  justify-self: right;
+  width: 200px;
+  height: 180px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 15px;
+  padding: 20px;
+  background-color: #86ba90;
+  box-sizing: content-box;
+  border: 5px outset #86ba90;
+  margin-right: 50px;
+  box-shadow: 0 0 2px inset green;
+  color: #0c1b33;
+}
+
+#flag-panel h2 {
+  padding-bottom: 20px;
+}
+
+#flag-panel #flag-number{
+  font-size: 3.5rem;
+  padding: 5px;
+  letter-spacing: 5px;
+  background-color: lightgray;
+  border: 5px inset #86ba90;
+  border-radius: 15px;
 }
 
 /* SCORE PANEL */
@@ -169,8 +239,10 @@ label {
   padding: 20px;
   background-color: brown;
   box-sizing: content-box;
-  border: 10px outset brown;
+  border: 5px outset brown;
   margin-left: 50px;
+  color: white;
+  box-shadow: 0 0 2px inset chocolate;
 }
 
 #score-panel h2 {
@@ -178,8 +250,10 @@ label {
 }
 
 #score-panel #score-number{
-  font-size: 4rem;
+  font-size: 3.5rem;
+  padding: 5px;
   letter-spacing: 5px;
-  background-color: rgb(186, 186, 186);
-  border-radius: 10px;
+  background-color: #0c1b33;
+  border: 5px inset brown;
+  border-radius: 15px;
 }
