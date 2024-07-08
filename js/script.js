@@ -213,27 +213,27 @@ function revealNearCells(cell) {
                           + 1, + gridWidth - 1, + gridWidth, + gridWidth + 1];
   
   for (let i = 0; i < allDirections.length; i++) {
-    const direction = allDirections[i];
-    const nearCellID = cell._cellID + direction;
-    
-    if (
-      !(isLeftEdge && (direction === -gridWidth - 1 || direction === -1 || direction === gridWidth - 1)) &&
-      !(isRightEdge && (direction === -gridWidth + 1 || direction === 1 || direction === gridWidth + 1)) &&
-      !(isFirstRow && (direction === -gridWidth + 1 || direction === -gridWidth || direction === -gridWidth - 1)) &&
-      !(isLastRow && (direction === gridWidth + 1 || direction === gridWidth || direction === gridWidth - 1))
-      ) {
-      const nearSquare = document.getElementById(nearCellID);
-        
-      if (nearSquare && !nearSquare.classList.contains('empty')) {
-        leftClick(nearSquare);
-        
-        if (nearSquare.innerHTML == 0) {
-          revealNearCells(nearSquare);
+      const direction = allDirections[i];
+      const nearCellID = cell._cellID + direction;
+      
+      if (
+        !(isLeftEdge && (direction === -gridWidth - 1 || direction === -1 || direction === gridWidth - 1)) &&
+        !(isRightEdge && (direction === -gridWidth + 1 || direction === 1 || direction === gridWidth + 1)) &&
+        !(isFirstRow && (direction === -gridWidth + 1 || direction === -gridWidth || direction === -gridWidth - 1)) &&
+        !(isLastRow && (direction === gridWidth + 1 || direction === gridWidth || direction === gridWidth - 1))
+        ) {
+        const nearSquare = document.getElementById(nearCellID);
+          
+        if (nearSquare && !nearSquare.classList.contains('empty')) {
+            leftClick(nearSquare);       
+                
+          if (nearSquare.innerHTML == 0) {
+            revealNearCells(nearSquare);
+          }
         }
       }
     }
   }
-}
   
 // Funzione di reset della griglia
 function reset() {

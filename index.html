@@ -20,17 +20,19 @@
 <body>
 
   <div class="main-wrapper">
-    <label for="difficulty">Scegli la difficoltà!</label>
-    <select name="difficulty" id="difficulty">
-      <option value="0">Hard</option>
-      <option value="1">Mediun</option>
-      <option value="2">Easy</option>
-    </select>
+    <div class="difficulties">
+      <label for="difficulty">Scegli la difficoltà: </label>
+      <select name="difficulty" id="difficulty">
+        <option value="0">Difficile</option>
+        <option value="1">Media</option>
+        <option value="2">Facile</option>
+      </select>
+    </div>
 
     <div id="grid-wrapper">
 
       <div id="flag-panel">
-        <h2>FLAG<br>DISPONIBILI</h2>
+        <h2>BANDIERE<br><span>DISPONIBILI</span></h2>
         <div id="flag-number">16</div>
       </div>
 
@@ -39,7 +41,7 @@
       </div>
 
       <div id="score-panel">
-        <h2>SCORE</h2>
+        <h2>PUNTEGGIO</h2>
         <div id="score-number">0</div>
       </div>
 

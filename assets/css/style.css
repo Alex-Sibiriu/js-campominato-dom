@@ -25,7 +25,7 @@ body {
 }
 
 #btn-restart {
-  margin-top: 50px;
+  margin-top: 20px;
   background: linear-gradient(to bottom right, brown, red, brown);
   color:  white;
   padding: 10px 20px;
@@ -50,6 +50,7 @@ body {
   height: 100vh;
   background-image: url('../img/background.jpg');
   background-size: cover;
+  background-position: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -58,17 +59,18 @@ body {
 }
 
 /* DIFFICULTY */
-label {
+.difficulties {
   text-transform: uppercase;
   font-size: 2rem;
   font-weight: bold;
   padding: 10px 50px;
+  margin-bottom: 10px;
   background: linear-gradient(to right, transparent, white, transparent);
 }
 
 #difficulty {
-  margin: 30px 0;
-  font-size: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
   border-radius: 10px;
   padding: 3px 5px;
 }
@@ -167,7 +169,7 @@ label {
 .game-end {
   position: absolute;
   width: 100%;
-  aspect-ratio: 1;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -199,7 +201,7 @@ label {
 /* FLAG PANEL */
 #flag-panel {
   justify-self: right;
-  width: 200px;
+  width: min-content;
   height: 180px;
   font-size: 1.5rem;
   font-weight: bold;
@@ -216,6 +218,8 @@ label {
 
 #flag-panel h2 {
   padding-bottom: 20px;
+  color: white;
+  letter-spacing: 2px;
 }
 
 #flag-panel #flag-number{
@@ -230,8 +234,7 @@ label {
 /* SCORE PANEL */
 #score-panel {
   justify-self: right;
-  width: 200px;
-  height: 160px;
+  height: 180px;
   font-size: 2.5rem;
   font-weight: bold;
   text-align: center;
@@ -247,6 +250,7 @@ label {
 
 #score-panel h2 {
   padding-bottom: 20px;
+  letter-spacing: 2px;
 }
 
 #score-panel #score-number{
@@ -256,4 +260,97 @@ label {
   background-color: #0c1b33;
   border: 5px inset brown;
   border-radius: 15px;
+}
+
+@media screen and (max-width: 992px) {
+  #grid-container {
+    width: 550px;
+  }
+
+  .difficulties {
+    font-size: 1.5rem;
+    padding: 0px 40px;
+  }
+
+  #difficulty {
+    margin: 10px 0;
+    font-size: 1.2rem;
+  }
+
+  #grid-wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #grid-container {
+    order: 2;
+  }
+
+  .square {
+    font-size: 2rem;
+  }
+
+  #btn-restart {
+    margin-top: 10px;
+    font-size: 1.2rem;
+  }
+
+  #flag-panel,
+  #score-panel {
+    width: 260px;
+    height: min-content;
+    justify-self: center;
+    padding: 5px;
+    margin: 10px 5px;
+    font-size: 1rem;
+  }
+
+  #flag-panel h2,
+  #score-panel h2 {
+    display: inline-block;
+    padding: 0;
+    padding-right: 5px;
+  }
+
+  #flag-panel span {
+    display: none;
+  }
+
+  #flag-panel #flag-number,
+  #score-panel #score-number {
+    display: inline-block;
+    font-size: 1.2rem;
+  }
+
+  .game-end {
+    line-height: 150px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+
+  .difficulties {
+    text-align: center;
+  }
+
+  #grid-container {
+    width: 100%;
+  }
+
+  .square {
+    font-size: 1.4rem;
+  }
+  
+  #flag-panel,
+  #score-panel {
+    justify-self: center;
+    padding: 5px;
+    margin: 10px 10px;
+    font-size: 1rem;
+  }
+
+  .game-end {
+    line-height: 100px;
+    font-size: 2rem;
+  }
 }
