@@ -158,7 +158,7 @@ function printResult(win) {
   message.innerHTML = 
   `
   Hai Vinto!<br>
-  Il tuo punteggio è di:<br>
+  Il tuo punteggio è:<br>
   ${score}/${maxSquares - bombNumber}
   `;
   } else {
@@ -166,7 +166,7 @@ function printResult(win) {
   message.innerHTML = 
   `
   Hai Perso!<br>
-  Il tuo punteggio è di:<br>
+  Il tuo punteggio è:<br>
   ${score}/${maxSquares - bombNumber}
   `;
   }

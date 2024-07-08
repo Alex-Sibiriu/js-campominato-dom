@@ -26,6 +26,7 @@ body {
 
 #btn-restart {
   margin-top: 20px;
+  margin-bottom: 10px;
   background: linear-gradient(to bottom right, brown, red, brown);
   color:  white;
   padding: 10px 20px;
@@ -47,7 +48,7 @@ body {
 }
 
 .main-wrapper {
-  height: 100vh;
+  min-height: 100vh;
   background-image: url('../img/background.jpg');
   background-size: cover;
   background-position: center;
@@ -325,15 +326,17 @@ body {
     width: 550px;
   }
 
-  /* .difficulties {
+  .difficulties {
     font-size: 1.5rem;
-    padding: 0px 40px;
   }
 
   #difficulty {
-    margin: 10px 0;
     font-size: 1.2rem;
-  } */
+  } 
+
+  .square {
+    font-size: 1.9rem;
+  }
 
   /* #grid-wrapper {
     flex-wrap: wrap;
@@ -342,7 +345,7 @@ body {
 
   #grid-container {
     order: 2;
-  } */
+  }
 
   .square {
     font-size: 2rem;
@@ -384,6 +387,13 @@ body {
 
   .difficulties {
     text-align: center;
+    font-size: 1.2rem;
+    padding: 0;
+    width: 100%;
+  }
+
+  #difficulty {
+    font-size: 1rem;
   }
 
   #grid-container {
@@ -391,19 +401,19 @@ body {
   }
 
   .square {
-    font-size: 1.4rem;
+    font-size: 1.05rem;
   }
   
   #flag-panel,
   #score-panel {
     justify-self: center;
     padding: 5px;
-    margin: 10px 10px;
-    font-size: 1rem;
+    margin: 5px 10px;
+    font-size: .8rem;
   }
 
   .game-end {
-    line-height: 100px;
+    line-height: 70px;
     font-size: 2rem;
   }
 }
