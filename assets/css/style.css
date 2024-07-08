@@ -64,7 +64,7 @@ body {
   font-size: 2rem;
   font-weight: bold;
   padding: 10px 50px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   background: linear-gradient(to right, transparent, white, transparent);
 }
 
@@ -200,8 +200,9 @@ body {
 
 /* FLAG PANEL */
 #flag-panel {
+  user-select: none;
   justify-self: right;
-  width: min-content;
+  width: 250px;
   height: 180px;
   font-size: 1.5rem;
   font-weight: bold;
@@ -233,9 +234,11 @@ body {
 
 /* SCORE PANEL */
 #score-panel {
+  user-select: none;
   justify-self: right;
+  width: 250px;
   height: 180px;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
   border-radius: 15px;
@@ -262,13 +265,10 @@ body {
   border-radius: 15px;
 }
 
-@media screen and (max-width: 992px) {
-  #grid-container {
-    width: 550px;
-  }
-
+@media screen and (max-width: 1520px) {
   .difficulties {
     font-size: 1.5rem;
+    margin-bottom: 10px;
     padding: 0px 40px;
   }
 
@@ -286,10 +286,6 @@ body {
     order: 2;
   }
 
-  .square {
-    font-size: 2rem;
-  }
-
   #btn-restart {
     margin-top: 10px;
     font-size: 1.2rem;
@@ -301,11 +297,68 @@ body {
     height: min-content;
     justify-self: center;
     padding: 5px;
-    margin: 10px 5px;
+    margin: 10px 40px;
     font-size: 1rem;
   }
 
   #flag-panel h2,
+  #score-panel h2 {
+    display: inline-block;
+    padding: 0;
+    padding-right: 5px;
+  }
+
+  #flag-panel span,
+  #score-panel span {
+    display: none;
+  }
+
+  #flag-panel #flag-number,
+  #score-panel #score-number {
+    display: inline-block;
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #grid-container {
+    width: 550px;
+  }
+
+  /* .difficulties {
+    font-size: 1.5rem;
+    padding: 0px 40px;
+  }
+
+  #difficulty {
+    margin: 10px 0;
+    font-size: 1.2rem;
+  } */
+
+  /* #grid-wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #grid-container {
+    order: 2;
+  } */
+
+  .square {
+    font-size: 2rem;
+  }
+
+  /* #btn-restart {
+    margin-top: 10px;
+    font-size: 1.2rem;
+  } */
+
+  #flag-panel,
+  #score-panel {
+    margin: 10px 5px;
+  }
+
+  /* #flag-panel h2,
   #score-panel h2 {
     display: inline-block;
     padding: 0;
@@ -320,7 +373,7 @@ body {
   #score-panel #score-number {
     display: inline-block;
     font-size: 1.2rem;
-  }
+  } */
 
   .game-end {
     line-height: 150px;
