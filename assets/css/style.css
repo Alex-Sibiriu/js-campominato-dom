@@ -204,7 +204,7 @@ body {
   user-select: none;
   justify-self: right;
   width: 250px;
-  height: 180px;
+  height: fit-content;
   font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
@@ -238,7 +238,7 @@ body {
   user-select: none;
   justify-self: right;
   width: 250px;
-  height: 180px;
+  height: fit-content;
   font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
@@ -295,7 +295,6 @@ body {
   #flag-panel,
   #score-panel {
     width: 260px;
-    height: min-content;
     justify-self: center;
     padding: 5px;
     margin: 10px 40px;
@@ -307,11 +306,6 @@ body {
     display: inline-block;
     padding: 0;
     padding-right: 5px;
-  }
-
-  #flag-panel span,
-  #score-panel span {
-    display: none;
   }
 
   #flag-panel #flag-number,
@@ -338,45 +332,10 @@ body {
     font-size: 1.9rem;
   }
 
-  /* #grid-wrapper {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  #grid-container {
-    order: 2;
-  }
-
-  .square {
-    font-size: 2rem;
-  }
-
-  /* #btn-restart {
-    margin-top: 10px;
-    font-size: 1.2rem;
-  } */
-
   #flag-panel,
   #score-panel {
     margin: 10px 5px;
   }
-
-  /* #flag-panel h2,
-  #score-panel h2 {
-    display: inline-block;
-    padding: 0;
-    padding-right: 5px;
-  }
-
-  #flag-panel span {
-    display: none;
-  }
-
-  #flag-panel #flag-number,
-  #score-panel #score-number {
-    display: inline-block;
-    font-size: 1.2rem;
-  } */
 
   .game-end {
     line-height: 150px;

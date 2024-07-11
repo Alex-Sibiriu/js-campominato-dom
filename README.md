@@ -1,34 +1,29 @@
-Campominato
-===
-Copiamo la griglia fatta ieri nella nuova repo e aggiungiamo la logica del gioco (attenzione: non bisogna copiare tutta la cartella dell’esercizio ma solo l’index.html, e le cartelle js/ css/ con i relativi script e fogli di stile, per evitare problemi con l’inizializzazione di git).
-Il computer deve generare 16 numeri casuali nello stesso range della difficoltà prescelta: le bombe. Attenzione: **nella stessa cella può essere posizionata al massimo una bomba, perciò nell’array delle bombe non potranno esserci due numeri uguali.
-In seguito l’utente clicca su una cella: se il numero è presente nella lista dei numeri generati - abbiamo calpestato una bomba - la cella si colora di rosso e la partita termina. Altrimenti la cella cliccata si colora di azzurro e l’utente può continuare a cliccare sulle altre celle.
-La partita termina quando il giocatore clicca su una bomba o quando raggiunge il numero massimo possibile di numeri consentiti (ovvero quando ha rivelato tutte le celle che non sono bombe).
-Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha cliccato su una cella che non era una bomba.
-## Sviluppo
-1. PLAY
-- leggo la proprietà della griglia (livello)
-- RESET
-- genero il playground
-- genero le bombe
+# Campominato
 
-2. CLICK DELLA CELLA
-- verifico se è una bomba
-  - SI -> FINE GIOCO
-  - NO -> 
-        - coloro la cella
-        - incremento il contatore (se non è stata già cliccata)
-        - verifico se il punteggio è vincente -> SI -> FINE GIOCO
+Benvenuto nel gioco del Campo Minato! Questo è un clone del classico gioco di Campo Minato, implementato con le seguenti funzionalità:
 
-3. RESET
-- cancella la griglia
-- azzero il contatore
-- svuoto l’array delle bombe
-4. FINE GIOCO
-- accendere tutte le bombe
-- congelo la griglia
-- stampo il messaggio finale con punteggio. Messaggio diverso se vince o perde.
+- Tre livelli di difficoltà: Facile, Medio, Difficile.
+- Una griglia di gioco regolare, con celle cliccabili per scoprire le caselle.
+- Regole standard del Campo Minato, inclusi numeri che indicano il numero di mine nelle celle adiacenti.
 
-## Bonus
-- accendere tutte le bombe
-- congelare la griglia
+## Come Giocare
+
+1. **Scelta della Difficoltà**: Al lancio del gioco, verrà chiesto di scegliere la difficoltà tra Facile, Medio e Difficile.
+
+   - **Facile**: Griglia 10x10 con 16 mine.
+   - **Medio**: Griglia 9x9 con 16 mine.
+   - **Difficile**: Griglia 7x7 con 16 mine.
+
+2. **Scoprire le Caselle**: Clicca su una cella per scoprire il contenuto. Se la cella contiene una mina, il gioco finisce. Altrimenti, verrà mostrato un numero che indica quante mine ci sono nelle caselle adiacenti.
+
+3. **Bandiere**: Puoi mettere una bandiera su una cella se pensi che contenga una mina. Questo è utile per tenere traccia delle posizioni delle mine.
+
+4. **Vittoria**: Vinci quando tutte le celle non contenenti mine sono scoperte.
+
+## Tecnologie Utilizzate
+
+Questo gioco è stato implementato utilizzando HTML, CSS e JavaScript. Non richiede alcuna dipendenza esterna o libreria.
+
+## Come Avviare il Gioco
+
+Per avviare il gioco localmente, clona questo repository e apri il file `index.html` nel tuo browser preferito.
